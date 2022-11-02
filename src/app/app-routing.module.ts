@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { LoginAssistantComponent } from "./components/dropdowns/user-dropdown/loginAssistant.component";
 
 // layouts
 import { AdminComponent } from "./layouts/admin/admin.component";
@@ -38,8 +39,8 @@ const routes: Routes = [
     path: "auth",
     component: AuthComponent,
     children: [
-      { path: "login", component: LoginComponent },
-      { path: "register", component: RegisterComponent },
+      { path: "login", component: LoginAssistantComponent },
+      // { path: "register", component: RegisterComponent },
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
   },
