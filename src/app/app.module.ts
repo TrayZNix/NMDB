@@ -9,10 +9,10 @@ import { AdminComponent } from "./layouts/admin/admin.component";
 import { AuthComponent } from "./layouts/auth/auth.component";
 
 // admin views
-import { DashboardComponent } from "./views/admin/dashboard/dashboard.component";
-import { MapsComponent } from "./views/admin/maps/maps.component";
-import { SettingsComponent } from "./views/admin/settings/settings.component";
-import { TablesComponent } from "./views/admin/tables/tables.component";
+import { PeliculasComponent } from "./views/admin/peliculas/peliculas.component";
+import { FavoritesComponent } from "./views/admin/favorites/favorites.component";
+import { ActorsComponent } from "./views/admin/actors/actors.component";
+import { ReviewsComponent } from "./views/admin/reviews/reviews.component";
 
 // auth views
 import { LoginComponent } from "./views/auth/login/login.component";
@@ -31,7 +31,7 @@ import { CardBarChartComponent } from "./components/cards/card-bar-chart/card-ba
 import { CardLineChartComponent } from "./components/cards/card-line-chart/card-line-chart.component";
 import { CardPageVisitsComponent } from "./components/cards/card-page-visits/card-page-visits.component";
 import { CardProfileComponent } from "./components/cards/card-profile/card-profile.component";
-import { CardSettingsComponent } from "./components/cards/card-settings/card-settings.component";
+import { CardActorsComponent } from "./components/cards/card-settings/card-actors.component";
 import { CardSocialTrafficComponent } from "./components/cards/card-social-traffic/card-social-traffic.component";
 import { CardStatsComponent } from "./components/cards/card-stats/card-stats.component";
 import { CardTableComponent } from "./components/cards/card-table/card-table.component";
@@ -48,11 +48,12 @@ import { NotificationDropdownComponent } from "./components/dropdowns/notificati
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { HttpClientModule } from "@angular/common/http";
+import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjeta-actor.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    PeliculasComponent,
     CardBarChartComponent,
     CardLineChartComponent,
     IndexDropdownComponent,
@@ -66,7 +67,7 @@ import { HttpClientModule } from "@angular/common/http";
     FooterAdminComponent,
     CardPageVisitsComponent,
     CardProfileComponent,
-    CardSettingsComponent,
+    CardActorsComponent,
     CardSocialTrafficComponent,
     CardStatsComponent,
     CardTableComponent,
@@ -77,14 +78,15 @@ import { HttpClientModule } from "@angular/common/http";
     IndexNavbarComponent,
     AdminComponent,
     AuthComponent,
-    MapsComponent,
-    SettingsComponent,
-    TablesComponent,
+    FavoritesComponent,
+    ActorsComponent,
+    ReviewsComponent,
     LoginComponent,
     RegisterComponent,
     IndexComponent,
     LandingComponent,
     ProfileComponent,
+    TarjetaActorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

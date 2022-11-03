@@ -1,0 +1,29 @@
+<div *ngFor="let actor of listaActores" class="tarjeta">
+  <h1 class="title">{{ actor.name }}</h1>
+  <hr />
+  <div class="iblock">
+    <img
+      class="actorPhoto"
+      [src]="
+        'https://image.tmdb.org/t/p/w235_and_h235_face/' + actor.profile_path
+      "
+      onerror="this.src='../../../assets/images/default.jpg'"
+    />
+    <div>
+      <hr />
+
+      <h2>Conocido por:</h2>
+      <div class="containerPortadas">
+        <div *ngFor="let pelicula of actor.known_for">
+          <img
+            class="poster"
+            [src]="
+              'https://image.tmdb.org/t/p/w235_and_h235_face/' +
+              pelicula.poster_path
+            "
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
