@@ -31,3 +31,23 @@ export interface actoresResponse {
   total_pages: number;
   total_results: number;
 }
+export interface PersonaResponse {
+  adult: boolean;
+  also_known_as: string[];
+  biography: string;
+  birthday?: any;
+  deathday?: any;
+  gender: number;
+  homepage?: any;
+  id: number;
+  imdb_id?: any;
+  known_for_department: string;
+  name: string;
+  place_of_birth?: any;
+  popularity: number;
+  profile_path?: any;
+}
+
+export class PersonaResponse {
+  constructor() {}
+}

@@ -1,4 +1,4 @@
-<div *ngFor="let actor of listaActores" class="tarjeta">
+<div *ngFor="let actor of listaActores" [routerLink]="actor.id" class="tarjeta">
   <h1 class="title">{{ actor.name }}</h1>
   <hr />
   <div class="iblock">
@@ -12,13 +12,13 @@
     <div>
       <hr />
 
-      <h2>Conocido por:</h2>
+      <h2 id="2">Conocido por:</h2>
       <div class="containerPortadas">
         <div *ngFor="let pelicula of actor.known_for">
           <img
             class="poster"
             [src]="
-              'https://image.tmdb.org/t/p/w235_and_h235_face/' +
+              'https://www.themoviedb.org/t/p/w220_and_h330_face' +
               pelicula.poster_path
             "
           />
