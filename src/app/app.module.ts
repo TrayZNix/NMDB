@@ -48,6 +48,7 @@ import { NotificationDropdownComponent } from "./components/dropdowns/notificati
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { HttpClientModule } from "@angular/common/http";
+import { ListPopularFilmsComponent } from './views/admin/list-popular-films/list-popular-films.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { HttpClientModule } from "@angular/common/http";
     IndexComponent,
     LandingComponent,
     ProfileComponent,
+    ListPopularFilmsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
