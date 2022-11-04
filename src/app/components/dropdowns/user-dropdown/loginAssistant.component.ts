@@ -20,7 +20,7 @@ export class LoginAssistantComponent implements OnInit {
           .subscribe((sessionToken) => {
             if (sessionToken.success) {
               localStorage.setItem("sessionId", sessionToken.session_id);
-              this.router.navigate(["admin/dashboard"]);
+              this.router.navigate(["peliculas"]);
             } else {
               console.log("Error al crear sessionId");
             }

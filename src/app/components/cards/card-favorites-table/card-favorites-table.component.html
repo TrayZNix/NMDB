@@ -1,0 +1,132 @@
+<div
+  class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
+  [ngClass]="color === 'light' ? 'bg-white' : 'bg-red-900 text-white'"
+>
+  <div class="rounded-t mb-0 px-4 py-3 border-0">
+    <div class="flex flex-wrap items-center">
+      <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+        <h3
+          class="font-semibold text-lg"
+          [ngClass]="color === 'light' ? 'text-blueGray-700' : 'text-white'"
+        >
+          Peliculas favoritas
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="block w-full overflow-x-auto">
+    <!-- Projects table -->
+    <table class="items-center w-full bg-transparent border-collapse">
+      <thead>
+        <tr>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Pelicula
+          </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Fecha de salida
+          </th>
+
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Popularidad
+          </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let peli of peliculas"
+          [style]="
+            'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 246, 252, 0.7), rgba(0, 0, 0, 0)), url(https://image.tmdb.org/t/p/w235_and_h235_face/' +
+            peli.backdrop_path +
+            ');' +
+            'background-size: 1 100%; background-repeat: no-repeat; background_position: 0 0;'
+          "
+        >
+          <th
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+          >
+            <img
+              [src]="
+                'https://image.tmdb.org/t/p/w235_and_h235_face/' +
+                peli.poster_path
+              "
+              onerror="this.src='assets/img/bootstrap.jpg'"
+              class="h-24 w-24 bg-white border"
+              alt="..."
+            />
+            <span
+              class="ml-3 text-xl mx-4 font-bold"
+              [ngClass]="color === 'light' ? 'text-blueGray-600' : 'text-white'"
+            >
+              {{ peli.title }}
+            </span>
+          </th>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            {{ peli.release_date }}
+          </td>
+
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <div class="flex items-center">
+              <span class="mr-2">{{ peli.vote_average * 10 }}%</span>
+              <div class="relative w-full">
+                <div
+                  class="overflow-hidden h-2 text-xs flex rounded"
+                  [ngClass]="{
+                    'bg-emerald-200': peli.vote_average >= 6.5,
+                    'bg-red-200': peli.vote_average < 6.5
+                  }"
+                >
+                  <div
+                    [ngClass]="{
+                      'bg-emerald-500': peli.vote_average >= 6.5,
+                      'bg-red-500': peli.vote_average < 6.5
+                    }"
+                    [style]="'width:' + peli.vote_average * 10 + '%'"
+                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+          >
+            <app-table-dropdown></app-table-dropdown>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

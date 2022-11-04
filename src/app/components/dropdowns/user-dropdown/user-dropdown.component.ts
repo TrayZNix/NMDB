@@ -1,4 +1,3 @@
-
 import { Component, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
 import { createPopper } from "@popperjs/core";
 import {
@@ -31,6 +30,7 @@ export class UserDropdownComponent implements AfterViewInit {
         .getAccountDetails(localStorage.getItem("sessionId"))
         .subscribe((details) => {
           this.accDetails = details;
+          localStorage.setItem("accountId", details.id + "");
         });
     }
   }
