@@ -116,7 +116,7 @@
           </a>
         </li>
 
-        <li class="items-center">
+        <li class="items-center" *ngIf="loguedIn">
           <a
             [routerLink]="['/favorites']"
             class="text-xs uppercase py-3 font-bold block"
@@ -138,7 +138,7 @@
           </a>
         </li>
 
-        <li class="items-center">
+        <li class="items-center" *ngIf="loguedIn">
           <a
             [routerLink]="['/reviews']"
             class="text-xs uppercase py-3 font-bold block"

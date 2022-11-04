@@ -1,4 +1,14 @@
 <div id="mainContainer">
+  <a
+    color="secondary"
+    [routerLink]="'/actors'"
+    [queryParams]="{ page: locatedInPage }"
+  >
+    <i
+      id="return"
+      class="border rounded-full p-5 bg-white fas fa-arrow-left"
+    ></i>
+  </a>
   <div mat-dialog-title *ngIf="loaded" class="header">
     <h1>
       {{ person.name }}

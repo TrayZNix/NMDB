@@ -1,4 +1,9 @@
-<div *ngFor="let actor of listaActores" [routerLink]="actor.id" class="tarjeta">
+<div
+  *ngFor="let actor of listaActores"
+  [routerLink]="actor.id"
+  [queryParams]="{ locatedInPage: locatedInPage }"
+  class="tarjeta"
+>
   <h1 class="title">{{ actor.name }}</h1>
   <hr />
   <div class="iblock">

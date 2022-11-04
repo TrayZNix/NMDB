@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Actor } from "src/app/interfaces/actors.interface";
 import { ActoresService } from "src/app/Services/actores.service";
 
@@ -18,13 +18,24 @@ export class ActorsComponent implements OnInit {
   username: string = "";
   avatarPath: string = "";
 
-  constructor(private actorService: ActoresService, private router: Router) {}
+  constructor(
+    private actorService: ActoresService,
+    private router: Router,
+    private adRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.actualizarActores();
-    this.sessionId = localStorage.getItem("sessionId") as string;
-    this.username = localStorage.getItem("username") as string;
-    this.avatarPath = localStorage.getItem("avatar") as string;
+    this.adRoute.queryParams.subscribe((queryParams) => {
+      if (queryParams["page"] as number) {
+        this.page = queryParams["page"] as number;
+      } else {
+        this.page = 1;
+      }
+      this.actualizarActores();
+      this.sessionId = localStorage.getItem("sessionId") as string;
+      this.username = localStorage.getItem("username") as string;
+      this.avatarPath = localStorage.getItem("avatar") as string;
+    });
   }
 
   actualizarActores() {
@@ -35,15 +46,16 @@ export class ActorsComponent implements OnInit {
   }
 
   prevPage() {
-    this.page = this.page - 1;
+    this.router.navigate["actors?page=" + (this.page - 1)];
     this.actualizarActores();
   }
   nextPage() {
     this.page = this.page + 1;
+    this.router.navigate(["/actors"], { queryParams: { page: this.page } });
     this.actualizarActores();
   }
   setPage(page: number) {
-    this.page = page;
+    this.router.navigate(["/actors"], { queryParams: { page: page } });
     this.actualizarActores();
   }
 }
