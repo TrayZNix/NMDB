@@ -1,0 +1,54 @@
+app-tarjeta-actor {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pages {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  padding: 15%;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+#main {
+  margin-top: 3%;
+  padding: 2%;
+}
+
+@media screen and (max-width: 400px) {
+  .main {
+    margin-top: 7%;
+  }
+}
+
+button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 15%;
+  color: black;
+}
+
+.active {
+  background-color: rgb(51, 75, 152); /* Green */
+}
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
