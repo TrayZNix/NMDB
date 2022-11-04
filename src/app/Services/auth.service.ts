@@ -1,6 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import {
@@ -9,8 +8,6 @@ import {
   ResponseCreateSession,
   ResponseDeleteSession,
 } from "../interfaces/authorization.interface";
-
-import Swal from "sweetalert2";
 
 @Injectable({
   providedIn: "root",
@@ -32,6 +29,7 @@ export class AuthService {
   logout() {
     this.deleteSession(localStorage.getItem("sessionId") as string).subscribe();
     localStorage.removeItem("sessionId");
+    localStorage.removeItem("accountId");
   }
 
   createRequestToken(): Observable<ResponseCreateRequestToken> {

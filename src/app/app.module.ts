@@ -49,6 +49,10 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { HttpClientModule } from "@angular/common/http";
 import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjeta-actor.component";
+import { CardFavoritesTableComponent } from "./components/cards/card-favorites-table/card-favorites-table.component";
+import { ActoresService } from "./Services/actores.service";
+import { AuthService } from "./Services/auth.service";
+import { FavoriteFilmsService } from "./Services/favorite-films.service";
 
 @NgModule({
   declarations: [
@@ -87,9 +91,10 @@ import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjet
     LandingComponent,
     ProfileComponent,
     TarjetaActorComponent,
+    CardFavoritesTableComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  providers: [ActoresService, AuthService, FavoriteFilmsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
