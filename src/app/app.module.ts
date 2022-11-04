@@ -49,6 +49,8 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { HttpClientModule } from "@angular/common/http";
 import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjeta-actor.component";
+import { FilmsCardComponent } from "./components/cards/films-card/films-card.component";
+import { FilmsTableComponent } from "./components/cards/films-table/films-table.component";
 
 @NgModule({
   declarations: [
@@ -87,6 +89,8 @@ import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjet
     LandingComponent,
     ProfileComponent,
     TarjetaActorComponent,
+    FilmsCardComponent,
+    FilmsTableComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

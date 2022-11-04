@@ -1,0 +1,204 @@
+<p>films-table works!</p>
+<div
+  class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
+  [ngClass]="color === 'light' ? 'bg-white' : 'bg-red-900 text-white'"
+>
+  <div class="rounded-t mb-0 px-4 py-3 border-0">
+    <div class="flex flex-wrap items-center">
+      <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+        <h3
+          class="font-semibold text-lg"
+          [ngClass]="color === 'light' ? 'text-blueGray-700' : 'text-white'"
+        >
+          <i class="fas fa-star"></i>
+           Popular Films
+          <i class="fas fa-star"></i>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="block w-full overflow-x-auto">
+    <!-- Projects table -->
+    <table class="items-center w-full bg-transparent border-collapse">
+      <thead>
+        <tr>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Películas
+          </th>
+          <th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'light'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+        >
+          Título
+        </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Lenguaje Original
+          </th>
+          <th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'light'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+          >
+          Para todos los públicos
+          </th>
+          <th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'light'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+          >
+          Fecha de lanzamiento
+          </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Reseña
+          </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Actores
+          </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Media de Votos
+          </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <th
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-normal w-30 p-4 text-center flex items-center"
+            [style]="
+            'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 246, 252, 0.7), rgba(0, 0, 0, 0)), url(https://image.tmdb.org/t/p/w235_and_h235_face/' +
+            movie.backdrop_path +
+            ');' +
+            'background-size: 1 100%; height: 120px; background-size: cover; background-repeat: no-repeat; background_position: 0 0;'
+          "
+          >
+          </th>
+          <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+          {{movie.title}}
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+          {{movie.original_language.toUpperCase()}}
+          </td>
+
+          <td
+          class="border-t-0 px-6 w-20 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
+          *ngIf="!movie.adult">
+          <img src="../../../../assets/img/check.png" alt="Mayores de 18" class="w-5"/>
+          </td>
+
+          <td
+          class="border-t-0 px-6 w-20 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
+          *ngIf="movie.adult">
+          <img src="../../../../assets/img/-18.png" alt="Mayores de 18" class="w-5"/>
+          </td>
+
+          <td
+          class="border-t-0 px-6 w-20 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
+          >
+          <i class="fas fa-circle text-green-400 mr-2"></i> {{movie.release_date}}
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
+          >
+            <i class="fas fa-circle text-red-500 mr-2"></i> {{movie.overview}}
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <div class="flex">
+              <div
+              [ngStyle]="{
+                'background-size': 'cover',
+                'background-image':
+                  'url(https://image.tmdb.org/t/p/w500' + movie.poster_path + ')'
+              }"
+                alt="..."
+                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
+              >
+              </div>
+            </div>
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <div class="flex items-center">
+              <span class="mr-2">{{getVotesAverage(movie)}}%</span>
+              <div class="relative w-full">
+                <div
+                  class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
+                >
+                  <div
+                    [style]="'width:'+ this.percentage +'%'"
+                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center"
+                    [ngStyle]="{'background-color': this.percentage < 50 ? 'red' : 'green'}"
+                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+          >
+            <app-table-dropdown></app-table-dropdown>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

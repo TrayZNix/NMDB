@@ -31,6 +31,7 @@ const routes: Routes = [
       { path: "actors", component: ActorsComponent },
       { path: "favorites", component: FavoritesComponent },
       { path: "reviews", component: ReviewsComponent },
+
       { path: "", redirectTo: "peliculas", pathMatch: "full" },
     ],
   },

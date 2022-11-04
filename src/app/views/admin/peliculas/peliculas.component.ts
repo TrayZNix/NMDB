@@ -1,15 +1,28 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { Films } from "src/app/interfaces/popularFilm.interface";
 import { AuthService } from "src/app/Services/auth.service";
+import { PopularFilmsService } from "src/app/Services/popular-films.service";
 
 @Component({
   selector: "app-peliculas",
   templateUrl: "./peliculas.component.html",
+  styleUrls: ["./peliculas.component.css"]
 })
 export class PeliculasComponent implements OnInit {
-  constructor(private authService: AuthService) {}
 
-  ngOnInit() {}
+  movies:Films[] = [];
+  moviesSlideShow:Films[] = [];
+
+  constructor(private authService: AuthService, private filmsService: PopularFilmsService) {}
+
+  ngOnInit() {
+    this.filmsService.getPeliculas().subscribe(resp => {
+      this.moviesSlideShow = resp;
+      this.movies = resp;
+    });
+
+  }
 
   login() {
     let requestToken: string;
