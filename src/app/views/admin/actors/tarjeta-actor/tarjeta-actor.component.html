@@ -1,4 +1,9 @@
-<div *ngFor="let actor of listaActores" class="tarjeta">
+<div
+  *ngFor="let actor of listaActores"
+  [routerLink]="actor.id"
+  [queryParams]="{ locatedInPage: locatedInPage }"
+  class="tarjeta"
+>
   <h1 class="title">{{ actor.name }}</h1>
   <hr />
   <div class="iblock">
@@ -12,7 +17,7 @@
     <div>
       <hr />
 
-      <h2>Conocido por:</h2>
+      <h2 id="2">Conocido por:</h2>
       <div class="containerPortadas">
         <div *ngFor="let pelicula of actor.known_for">
           <img

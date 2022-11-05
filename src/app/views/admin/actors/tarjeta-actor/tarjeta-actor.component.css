@@ -6,6 +6,7 @@
   background-color: white;
   border-radius: 15%;
   overflow: hidden;
+  cursor: pointer;
 }
 .containerPortadas {
   width: 100%;

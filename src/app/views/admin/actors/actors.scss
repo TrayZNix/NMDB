@@ -32,7 +32,7 @@ app-tarjeta-actor {
 }
 
 button {
-  background-color: #4caf50; /* Green */
+  background-color: #cbd5e1; /* Green */
   border: none;
   padding: 15px 32px;
   text-align: center;
@@ -43,10 +43,11 @@ button {
   margin-right: 1%;
   border-radius: 15%;
   color: black;
+  font-weight: 800;
 }
 
 .active {
-  background-color: rgb(51, 75, 152); /* Green */
+  background-color: #dc2626; /* Green */
 }
 button:focus {
   outline: none;
