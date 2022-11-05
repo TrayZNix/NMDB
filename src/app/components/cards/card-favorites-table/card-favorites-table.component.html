@@ -50,21 +50,13 @@
           >
             Popularidad
           </th>
-          <th
-            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-            [ngClass]="
-              color === 'light'
-                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-                : 'bg-red-800 text-red-300 border-red-700'
-            "
-          ></th>
         </tr>
       </thead>
       <tbody>
         <tr
           *ngFor="let peli of peliculas"
           [style]="
-            'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 246, 252, 0.7), rgba(0, 0, 0, 0)), url(https://image.tmdb.org/t/p/w235_and_h235_face/' +
+            'background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 246, 252, 0.7), rgba(255, 255, 255, 0)), url(https://image.tmdb.org/t/p/w235_and_h235_face/' +
             peli.backdrop_path +
             ');' +
             'background-size: 1 100%; background-repeat: no-repeat; background_position: 0 0;'
@@ -99,7 +91,9 @@
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <div class="flex items-center">
-              <span class="mr-2">{{ peli.vote_average * 10 }}%</span>
+              <span class="mr-2"
+                >{{ peli.vote_average * 10 | number: "1.2-2" }}%</span
+              >
               <div class="relative w-full">
                 <div
                   class="overflow-hidden h-2 text-xs flex rounded"
@@ -119,11 +113,6 @@
                 </div>
               </div>
             </div>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-          >
-            <app-table-dropdown></app-table-dropdown>
           </td>
         </tr>
       </tbody>
