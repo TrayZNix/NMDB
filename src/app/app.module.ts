@@ -51,6 +51,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjeta-actor.component";
 import { DetallesActorComponent } from "./views/admin/actors/detalles-actor/detalles-actor.component";
 import { RouterModule } from "@angular/router";
+import { CardFavoritesTableComponent } from "./components/cards/card-favorites-table/card-favorites-table.component";
+import { ActoresService } from "./Services/actores.service";
+import { AuthService } from "./Services/auth.service";
+import { FavoriteFilmsService } from "./Services/favorite-films.service";
 
 @NgModule({
   declarations: [
@@ -90,9 +94,10 @@ import { RouterModule } from "@angular/router";
     ProfileComponent,
     TarjetaActorComponent,
     DetallesActorComponent,
+    CardFavoritesTableComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule],
-  providers: [],
+  providers: [ActoresService, AuthService, FavoriteFilmsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
