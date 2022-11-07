@@ -15,13 +15,13 @@ export class PeliculasComponent implements OnInit, OnDestroy {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(){
-    const pos = (document.documentElement.scrollTop || document.body.scrollTop)*1300;
+    const pos = (document.documentElement.scrollTop || document.body.scrollTop)*2;
     const maxPos = (document.documentElement.scrollHeight || document.body.scrollHeight);
 
     if (pos > maxPos) {
-      this.filmsService.getPeliculas().subscribe(resp=> 
+      this.filmsService.getPeliculas().subscribe(resp=>
         this.movies.push(...resp));
-    } 
+    }
   }
 
   constructor(private authService: AuthService, private filmsService: PopularFilmsService) {}

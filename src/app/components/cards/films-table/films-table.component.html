@@ -124,18 +124,18 @@
       <tbody>
         <tr *ngFor="let movie of movies">
           <th
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-normal w-20 p-4 text-center flex items-center"
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-normal w-20 p-4 text-center items-center"
             [style]="
               'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 246, 252, 0.7), rgba(0, 0, 0, 0)), url(https://image.tmdb.org/t/p/w235_and_h235_face/' +
               movie.backdrop_path +
               ');' +
-              'background-size: 1 100%; min-height: 110px; background-size: cover; background-repeat: no-repeat; background_position: 0 0; margin-bottom: 2px'
+              'background-size: 1 100%; min-height: 110px; background-size: cover; background-repeat: no-repeat; background_position: 0 0;'
             "
           >
-          <div class="bg-white border rounded-lg overflow-hidden cursor-pointer" (click)="onMovieClick(movie)">
-            <img class="h-auto w-full object-cover object-center" [src]="getImgUrl(movie.backdrop_path)"  (error)="imgOnError($event)" alt="Poster photo">
+          <div class="bg-cover object-center border rounded-lg overflow-hidden cursor-pointer" (click)="onMovieClick(movie)">
+            <img class="h-24 w-full object-cover object-center" [src]="getImgUrl(movie.backdrop_path)"  (error)="imgOnError($event)" alt="Poster photo">
           </div>
-          
+
           </th>
           <td
             [ngStyle]="{ 'font-size.px': 12, 'font-weight': 'bold' }"
@@ -219,5 +219,12 @@
         </tr>
       </tbody>
     </table>
+    <div (click)="onActivate($event)">
+      <div class="example-button-container w-24">
+        <button class="rounded-full w-24" aria-label="Example icon button with a home icon">
+          <img src="../../../../assets/img/up-arrow.png" class="h-auto w-full object-cover object-center" alt="flechita">
+        </button>
+      </div>
+    </div>
   </div>
 </div>

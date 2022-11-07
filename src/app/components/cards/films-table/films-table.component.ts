@@ -51,4 +51,13 @@ export class FilmsTableComponent implements OnInit {
   onMovieClick(movie: Films) {
     this.router.navigate(['/pelicula', movie.id]);
   }
+
+  onActivate(event: Event) {
+    window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+    });
+  }
+
 }
