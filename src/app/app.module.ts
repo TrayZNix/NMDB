@@ -51,7 +51,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjeta-actor.component";
 import { FilmsCardComponent } from "./components/cards/films-card/films-card.component";
 import { FilmsTableComponent } from "./components/cards/films-table/films-table.component";
-import { PeliculaDetailsComponent } from './views/admin/pelicula-details/pelicula-details.component';
+import { PeliculaDetailsComponent } from "./views/admin/pelicula-details/pelicula-details.component";
 import { RouterModule } from "@angular/router";
 import { DetallesActorComponent } from "./views/admin/actors/detalles-actor/detalles-actor.component";
 import { CardFavoritesTableComponent } from "./components/cards/card-favorites-table/card-favorites-table.component";
@@ -103,8 +103,7 @@ import { FavoriteFilmsService } from "./Services/favorite-films.service";
     CardFavoritesTableComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule],
-  providers: [[ActoresService, AuthService, FavoriteFilmsService],
-
+  providers: [ActoresService, AuthService, FavoriteFilmsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
