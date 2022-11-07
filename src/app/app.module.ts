@@ -53,6 +53,11 @@ import { FilmsCardComponent } from "./components/cards/films-card/films-card.com
 import { FilmsTableComponent } from "./components/cards/films-table/films-table.component";
 import { PeliculaDetailsComponent } from './views/admin/pelicula-details/pelicula-details.component';
 import { RouterModule } from "@angular/router";
+import { DetallesActorComponent } from "./views/admin/actors/detalles-actor/detalles-actor.component";
+import { CardFavoritesTableComponent } from "./components/cards/card-favorites-table/card-favorites-table.component";
+import { ActoresService } from "./Services/actores.service";
+import { AuthService } from "./Services/auth.service";
+import { FavoriteFilmsService } from "./Services/favorite-films.service";
 
 @NgModule({
   declarations: [
@@ -93,10 +98,13 @@ import { RouterModule } from "@angular/router";
     TarjetaActorComponent,
     FilmsCardComponent,
     FilmsTableComponent,
-    PeliculaDetailsComponent
+    PeliculaDetailsComponent,
+    DetallesActorComponent,
+    CardFavoritesTableComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule],
-  providers: [],
+  providers: [[ActoresService, AuthService, FavoriteFilmsService],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

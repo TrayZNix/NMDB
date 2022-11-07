@@ -1,0 +1,88 @@
+@media screen and (max-width: 1024px) and (min-width: 0px) {
+  #mainContainer {
+    margin-top: 100px;
+  }
+  #actorPhoto {
+    transform: translateY(15%);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #mainContainer {
+    margin-top: 100px;
+  }
+}
+#imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+}
+#actorPhoto {
+  margin-top: 50px;
+  float: inline-end;
+  margin: 3%;
+  border-radius: 100%;
+  /* transform: translateY(-10%); */
+  transform: scale(0.8);
+}
+p {
+  text-align: justify;
+}
+.header {
+  box-shadow: 0 5px 0 0 red; /* Border bottom */
+}
+.fechas {
+  min-width: 180px;
+}
+.biografia {
+  margin: 3%;
+}
+
+h1,
+h2,
+h3 {
+  font-variant: small-caps;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 10px;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+#peliculas {
+  width: 100%;
+  overflow: scroll hidden;
+  white-space: nowrap;
+}
+
+.cartel {
+  display: inline-block;
+}
+
+.cartel img {
+  min-width: 0%;
+  max-width: 100%;
+  display: block;
+  width: 400px;
+}
+
+#return {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1500;
+}

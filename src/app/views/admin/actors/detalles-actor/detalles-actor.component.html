@@ -1,0 +1,54 @@
+<div id="mainContainer">
+  <a
+    color="secondary"
+    [routerLink]="'/actors'"
+    [queryParams]="{ page: locatedInPage }"
+  >
+    <i
+      id="return"
+      class="shadow border rounded-full p-5 bg-white fas fa-arrow-left"
+    ></i>
+  </a>
+  <div mat-dialog-title *ngIf="loaded" class="header">
+    <h1>
+      {{ person.name }}
+    </h1>
+  </div>
+  <div id="imageContainer">
+    <img
+      id="actorPhoto"
+      [src]="
+        'https://image.tmdb.org/t/p/w235_and_h235_face/' + person.profile_path
+      "
+    />
+  </div>
+  <div class="fechas" mat-dialog-content *ngIf="loaded">
+    <h2>Fecha de nacimiento:</h2>
+    <span>{{ person.birthday }}</span>
+    <h2 *ngIf="person.deathday != null">Fecha de nacimiento:</h2>
+    <span *ngIf="person.deathday">{{ person.deathday }}</span>
+  </div>
+  <div class="biografia">
+    <h2>Biografía:</h2>
+    <p>{{ person.biography ? person.biography : "No data" }}</p>
+  </div>
+  <!-- TODO arreglar router links-->
+  <!-- TODO cambiar idioma de las querys -->
+  <h2>Aparece en:</h2>
+  <div id="peliculas">
+    <div
+      class="cartel"
+      *ngFor="let cast of credits.cast"
+      [routerLink]="'/peliculas/' + cast.id"
+    >
+      <img
+        [src]="
+          'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' +
+          cast.poster_path
+        "
+      />
+      <h3>{{ cast.title }}</h3>
+      &nbsp;
+    </div>
+  </div>
+</div>

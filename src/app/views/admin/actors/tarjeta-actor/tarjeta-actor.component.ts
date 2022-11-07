@@ -8,5 +8,6 @@ import { Component, Input, OnInit } from "@angular/core";
 export class TarjetaActorComponent implements OnInit {
   constructor() {}
   @Input() listaActores: any[] = [];
+  @Input() locatedInPage: number;
   ngOnInit(): void {}
 }
