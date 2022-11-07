@@ -20,7 +20,9 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
+import { PeliculaDetailsComponent } from "./views/admin/pelicula-details/pelicula-details.component";
 import { DetallesActorComponent } from "./views/admin/actors/detalles-actor/detalles-actor.component";
+
 
 const routes: Routes = [
   // admin views
@@ -29,11 +31,12 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: "peliculas", component: PeliculasComponent },
+      { path: "pelicula/:id", component: PeliculaDetailsComponent },
       { path: "actors", component: ActorsComponent },
       { path: "actors/:id", component: DetallesActorComponent },
       { path: "favorites", component: FavoritesComponent },
       { path: "reviews", component: ReviewsComponent },
-      // { path: "", redirectTo: "peliculas", pathMatch: "full" },
+      { path: "", redirectTo: "peliculas", pathMatch: "full" },
     ],
   },
   // auth views

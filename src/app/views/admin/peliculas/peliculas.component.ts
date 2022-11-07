@@ -1,15 +1,38 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, HostListener, OnDestroy, OnInit } from "@angular/core";
+import { Films } from "src/app/interfaces/popularFilm.interface";
 import { AuthService } from "src/app/Services/auth.service";
+import { PopularFilmsService } from "src/app/Services/popular-films.service";
 
 @Component({
   selector: "app-peliculas",
   templateUrl: "./peliculas.component.html",
+  styleUrls: ["./peliculas.component.css"]
 })
-export class PeliculasComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+export class PeliculasComponent implements OnInit, OnDestroy {
 
-  ngOnInit() {}
+  movies:Films[] = [];
+  moviesSlideShow:Films[] = [];
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(){
+    const pos = (document.documentElement.scrollTop || document.body.scrollTop)*2;
+    const maxPos = (document.documentElement.scrollHeight || document.body.scrollHeight);
+
+    if (pos > maxPos) {
+      this.filmsService.getPeliculas().subscribe(resp=>
+        this.movies.push(...resp));
+    }
+  }
+
+  constructor(private authService: AuthService, private filmsService: PopularFilmsService) {}
+
+  ngOnInit() {
+    this.filmsService.getPeliculas().subscribe(resp => {
+      this.moviesSlideShow = resp;
+      this.movies = resp;
+    });
+
+  }
 
   login() {
     let requestToken: string;
@@ -23,5 +46,10 @@ export class PeliculasComponent implements OnInit {
         console.log("Error al pedir o recoger el token de logueo");
       }
     });
+  }
+
+
+  ngOnDestroy(): void {
+    this.filmsService.resetFilmsPage();
   }
 }
