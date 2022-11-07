@@ -25,7 +25,14 @@ commit.sh
 
 #Misc
 /.angular/cache
+<<<<<<< HEAD
 .sass-cache
 /connect.lock
 /coverage
 /lobpeerconnection.log
+=======
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+>>>>>>> 8f96513bebac1e1a3f3c427d6b4cf22820cfb83f

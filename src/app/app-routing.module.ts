@@ -7,10 +7,10 @@ import { AdminComponent } from "./layouts/admin/admin.component";
 import { AuthComponent } from "./layouts/auth/auth.component";
 
 // admin views
-import { DashboardComponent } from "./views/admin/dashboard/dashboard.component";
-import { MapsComponent } from "./views/admin/maps/maps.component";
-import { SettingsComponent } from "./views/admin/settings/settings.component";
-import { TablesComponent } from "./views/admin/tables/tables.component";
+import { PeliculasComponent } from "./views/admin/peliculas/peliculas.component";
+import { FavoritesComponent } from "./views/admin/favorites/favorites.component";
+import { ActorsComponent } from "./views/admin/actors/actors.component";
+import { ReviewsComponent } from "./views/admin/reviews/reviews.component";
 
 // auth views
 import { LoginComponent } from "./views/auth/login/login.component";
@@ -20,18 +20,23 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
+import { PeliculaDetailsComponent } from "./views/admin/pelicula-details/pelicula-details.component";
+import { DetallesActorComponent } from "./views/admin/actors/detalles-actor/detalles-actor.component";
+
 
 const routes: Routes = [
   // admin views
   {
-    path: "admin",
+    path: "",
     component: AdminComponent,
     children: [
-      { path: "dashboard", component: DashboardComponent },
-      { path: "settings", component: SettingsComponent },
-      { path: "tables", component: TablesComponent },
-      { path: "maps", component: MapsComponent },
-      { path: "", redirectTo: "dashboard", pathMatch: "full" },
+      { path: "peliculas", component: PeliculasComponent },
+      { path: "pelicula/:id", component: PeliculaDetailsComponent },
+      { path: "actors", component: ActorsComponent },
+      { path: "actors/:id", component: DetallesActorComponent },
+      { path: "favorites", component: FavoritesComponent },
+      { path: "reviews", component: ReviewsComponent },
+      { path: "", redirectTo: "peliculas", pathMatch: "full" },
     ],
   },
   // auth views
@@ -44,11 +49,11 @@ const routes: Routes = [
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
   },
-  // no layout views
-  { path: "profile", component: ProfileComponent },
-  { path: "landing", component: LandingComponent },
-  { path: "", component: IndexComponent },
-  { path: "**", redirectTo: "", pathMatch: "full" },
+  // // no layout views
+  // { path: "profile", component: ProfileComponent },
+  // { path: "landing", component: LandingComponent },
+  // { path: "", component: IndexComponent },
+  // { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 
 @NgModule({
