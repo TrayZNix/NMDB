@@ -31,7 +31,7 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: "peliculas", component: PeliculasComponent },
-      { path: "pelicula/:id", component: PeliculaDetailsComponent },
+      { path: "peliculas/:id", component: PeliculaDetailsComponent },
       { path: "actors", component: ActorsComponent },
       { path: "actors/:id", component: DetallesActorComponent },
       { path: "favorites", component: FavoritesComponent },
