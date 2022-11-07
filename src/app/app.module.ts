@@ -50,6 +50,7 @@ import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user
 import { HttpClientModule } from "@angular/common/http";
 import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjeta-actor.component";
 import { DetallesActorComponent } from "./views/admin/actors/detalles-actor/detalles-actor.component";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -90,7 +91,7 @@ import { DetallesActorComponent } from "./views/admin/actors/detalles-actor/deta
     TarjetaActorComponent,
     DetallesActorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })

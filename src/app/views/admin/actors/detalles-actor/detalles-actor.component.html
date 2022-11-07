@@ -32,22 +32,18 @@
     <h2>Biografía:</h2>
     <p>{{ person.biography ? person.biography : "No data" }}</p>
   </div>
-  <!-- TODO arreglar router links-->
-  <!-- TODO cambiar idioma de las querys -->
   <h2>Aparece en:</h2>
   <div id="peliculas">
-    <div
-      class="cartel"
-      *ngFor="let cast of credits.cast"
-      [routerLink]="'/peliculas/' + cast.id"
-    >
-      <img
-        [src]="
-          'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' +
-          cast.poster_path
-        "
-      />
-      <h3>{{ cast.title }}</h3>
+    <div class="cartel" *ngFor="let cast of credits.cast">
+      <a [routerLink]="'/peliculas/' + cast.id" routerLinkActive="active">
+        <img
+          [src]="
+            'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' +
+            cast.poster_path
+          "
+        />
+        <h3>{{ cast.title }}</h3>
+      </a>
       &nbsp;
     </div>
   </div>
