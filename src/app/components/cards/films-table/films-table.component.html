@@ -1,4 +1,3 @@
-<p>films-table works!</p>
 <div
   class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
   [ngClass]="color === 'light' ? 'bg-white' : 'bg-red-900 text-white'"
@@ -11,7 +10,7 @@
           [ngClass]="color === 'light' ? 'text-blueGray-700' : 'text-white'"
         >
           <i class="fas fa-star"></i>
-           Popular Films
+          Popular Films
           <i class="fas fa-star"></i>
         </h3>
       </div>
@@ -19,9 +18,12 @@
   </div>
   <div class="block w-full overflow-x-auto">
     <!-- Projects table -->
-    <table class="items-center w-full bg-transparent border-collapse">
+    <table
+      [ngStyle]="{ 'text-align': 'center' }"
+      class="items-center w-full bg-transparent border-collapse"
+    >
       <thead>
-        <tr>
+        <tr [ngStyle]="{ 'text-align': 'center' }">
           <th
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             [ngClass]="
@@ -33,17 +35,19 @@
             Películas
           </th>
           <th
-          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-          [ngClass]="
-            color === 'light'
-              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-              : 'bg-red-800 text-red-300 border-red-700'
-          "
-        >
-          Título
-        </th>
+            [ngStyle]="{ 'text-align': 'center' }"
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-normal font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Título
+          </th>
           <th
-            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngStyle]="{ 'text-align': 'center' }"
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-normal font-semibold text-left"
             [ngClass]="
               color === 'light'
                 ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
@@ -53,26 +57,29 @@
             Lenguaje Original
           </th>
           <th
-          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-          [ngClass]="
-            color === 'light'
-              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-              : 'bg-red-800 text-red-300 border-red-700'
-          "
+            [ngStyle]="{ 'text-align': 'center' }"
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
           >
-          Para todos los públicos
+            Para todos los públicos
           </th>
           <th
-          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-          [ngClass]="
-            color === 'light'
-              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-              : 'bg-red-800 text-red-300 border-red-700'
-          "
+            [ngStyle]="{ 'text-align': 'center' }"
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
           >
-          Fecha de lanzamiento
+            Fecha de lanzamiento
           </th>
           <th
+            [ngStyle]="{ 'text-align': 'center' }"
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             [ngClass]="
               color === 'light'
@@ -83,6 +90,7 @@
             Reseña
           </th>
           <th
+            [ngStyle]="{ 'text-align': 'center' }"
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             [ngClass]="
               color === 'light'
@@ -90,9 +98,10 @@
                 : 'bg-red-800 text-red-300 border-red-700'
             "
           >
-            Actores
+            Detalles
           </th>
           <th
+            [ngStyle]="{ 'text-align': 'center' }"
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             [ngClass]="
               color === 'light'
@@ -115,77 +124,87 @@
       <tbody>
         <tr *ngFor="let movie of movies">
           <th
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-normal w-30 p-4 text-center flex items-center"
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-normal w-20 p-4 text-center flex items-center"
             [style]="
-            'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 246, 252, 0.7), rgba(0, 0, 0, 0)), url(https://image.tmdb.org/t/p/w235_and_h235_face/' +
-            movie.backdrop_path +
-            ');' +
-            'background-size: 1 100%; height: 120px; background-size: cover; background-repeat: no-repeat; background_position: 0 0;'
-          "
+              'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 246, 252, 0.7), rgba(0, 0, 0, 0)), url(https://image.tmdb.org/t/p/w235_and_h235_face/' +
+              movie.backdrop_path +
+              ');' +
+              'background-size: 1 100%; min-height: 110px; background-size: cover; background-repeat: no-repeat; background_position: 0 0; margin-bottom: 2px'
+            "
           >
+          <div class="bg-white border rounded-lg overflow-hidden cursor-pointer" (click)="onMovieClick(movie)">
+            <img class="h-auto w-full object-cover object-center" [src]="getImgUrl(movie.backdrop_path)"  (error)="imgOnError($event)" alt="Poster photo">
+          </div>
+          
           </th>
           <td
-          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            [ngStyle]="{ 'font-size.px': 12, 'font-weight': 'bold' }"
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-normal p-4"
           >
-          {{movie.title}}
+            {{ movie.title.toUpperCase() }}
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-          {{movie.original_language.toUpperCase()}}
+            {{ movie.original_language.toUpperCase() }}
           </td>
 
           <td
-          class="border-t-0 px-6 w-20 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
-          *ngIf="!movie.adult">
-          <img src="../../../../assets/img/check.png" alt="Mayores de 18" class="w-5"/>
-          </td>
-
-          <td
-          class="border-t-0 px-6 w-20 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
-          *ngIf="movie.adult">
-          <img src="../../../../assets/img/-18.png" alt="Mayores de 18" class="w-5"/>
-          </td>
-
-          <td
-          class="border-t-0 px-6 w-20 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
+            class="border-t-0 px-6 w-20 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
+            *ngIf="!movie.adult"
           >
-          <i class="fas fa-circle text-green-400 mr-2"></i> {{movie.release_date}}
+            <img
+              src="../../../../assets/img/check.png"
+              alt="Mayores de 18"
+              class="w-5"
+            />
+          </td>
+
+          <td
+            class="border-t-0 px-6 w-20 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
+            *ngIf="movie.adult"
+          >
+            <img
+              src="../../../../assets/img/-18.png"
+              alt="Mayores de 18"
+              class="w-5"
+            />
+          </td>
+
+          <td
+            class="border-t-0 px-6 w-20 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
+          >
+            {{ movie.release_date }}
           </td>
           <td
             class="border-t-0 px-6 align-middle justify-center border-l-0 border-r-0 text-xs whitespace-normal p-4"
           >
-            <i class="fas fa-circle text-red-500 mr-2"></i> {{movie.overview}}
+            {{ movie.overview | slice: 0:140 }}...
           </td>
           <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-normal p-4"
           >
-            <div class="flex">
-              <div
-              [ngStyle]="{
-                'background-size': 'cover',
-                'background-image':
-                  'url(https://image.tmdb.org/t/p/w500' + movie.poster_path + ')'
-              }"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-              >
-              </div>
-            </div>
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 border border-blue-700 rounded"
+            (click)="onFilmClick(movie.id)">
+              Detalles
+            </button>
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <div class="flex items-center">
-              <span class="mr-2">{{getVotesAverage(movie)}}%</span>
+              <span class="mr-2">{{ getVotesAverage(movie) }}%</span>
               <div class="relative w-full">
                 <div
                   class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
                 >
                   <div
-                    [style]="'width:'+ this.percentage +'%'"
+                    [style]="'width:' + this.percentage + '%'"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center"
-                    [ngStyle]="{'background-color': this.percentage < 50 ? 'red' : 'green'}"
+                    [ngStyle]="{
+                      'background-color': this.percentage < 50 ? 'red' : 'green'
+                    }"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
                   ></div>
                 </div>

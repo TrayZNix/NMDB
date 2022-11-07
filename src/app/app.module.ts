@@ -51,6 +51,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjeta-actor.component";
 import { FilmsCardComponent } from "./components/cards/films-card/films-card.component";
 import { FilmsTableComponent } from "./components/cards/films-table/films-table.component";
+import { PeliculaDetailsComponent } from './views/admin/pelicula-details/pelicula-details.component';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -90,9 +92,10 @@ import { FilmsTableComponent } from "./components/cards/films-table/films-table.
     ProfileComponent,
     TarjetaActorComponent,
     FilmsCardComponent,
-    FilmsTableComponent
+    FilmsTableComponent,
+    PeliculaDetailsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })

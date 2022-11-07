@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Films } from 'src/app/interfaces/popularFilm.interface';
 
 @Component({
@@ -26,7 +27,7 @@ export class FilmsTableComponent implements OnInit {
   private _color = "light";
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -35,4 +36,19 @@ export class FilmsTableComponent implements OnInit {
     return this.percentage = Number(((movie.vote_average)*10).toFixed(2));
   }
 
+  onFilmClick(id : string) {
+    this.router.navigate(['/pelicula', id])
+  }
+
+  getImgUrl(backdrop: string) {
+    return `${this.filmImgUrl}${backdrop}`;
+  }
+
+  imgOnError(event: ErrorEvent) {
+    (event.target as HTMLImageElement).src ='../../../assets/img/notfoundfilm404.jpg';
+  }
+
+  onMovieClick(movie: Films) {
+    this.router.navigate(['/pelicula', movie.id]);
+  }
 }
