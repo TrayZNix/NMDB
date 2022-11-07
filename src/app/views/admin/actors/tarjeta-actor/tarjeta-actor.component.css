@@ -1,0 +1,52 @@
+.tarjeta {
+  border-radius: 20px;
+  margin: 5%;
+  width: 40%;
+  padding: 3%;
+  background-color: white;
+  border-radius: 15%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.containerPortadas {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.portadas {
+  margin: 2%;
+  padding: 2%;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.actorPhoto {
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: block;
+  text-align: center;
+  border-radius: 100%;
+}
+@media screen and (max-width: 400px) {
+  .tarjeta {
+    width: 85%;
+  }
+}
+
+h1,
+h2 {
+  font-variant: small-caps;
+}
+
+h1 {
+  font-weight: 800;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
