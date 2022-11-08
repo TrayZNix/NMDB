@@ -37,7 +37,7 @@ export class FilmsTableComponent implements OnInit {
   }
 
   onFilmClick(id : string) {
-    this.router.navigate(['/pelicula', id])
+    this.router.navigate(['/peliculas', id])
   }
 
   getImgUrl(backdrop: string) {
@@ -49,7 +49,7 @@ export class FilmsTableComponent implements OnInit {
   }
 
   onMovieClick(movie: Films) {
-    this.router.navigate(['/pelicula', movie.id]);
+    this.router.navigate(['/peliculas', movie.id]);
   }
 
   onActivate(event: Event) {

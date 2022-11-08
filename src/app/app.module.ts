@@ -49,7 +49,6 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { HttpClientModule } from "@angular/common/http";
 import { TarjetaActorComponent } from "./views/admin/actors/tarjeta-actor/tarjeta-actor.component";
-import { FilmsCardComponent } from "./components/cards/films-card/films-card.component";
 import { FilmsTableComponent } from "./components/cards/films-table/films-table.component";
 import { PeliculaDetailsComponent } from "./views/admin/pelicula-details/pelicula-details.component";
 import { RouterModule } from "@angular/router";
@@ -58,6 +57,7 @@ import { CardFavoritesTableComponent } from "./components/cards/card-favorites-t
 import { ActoresService } from "./Services/actores.service";
 import { AuthService } from "./Services/auth.service";
 import { FavoriteFilmsService } from "./Services/favorite-films.service";
+import { CastSlideComponent } from "./components/cards/cast-slide/cast-slide.component";
 
 @NgModule({
   declarations: [
@@ -96,11 +96,11 @@ import { FavoriteFilmsService } from "./Services/favorite-films.service";
     LandingComponent,
     ProfileComponent,
     TarjetaActorComponent,
-    FilmsCardComponent,
     FilmsTableComponent,
     PeliculaDetailsComponent,
     DetallesActorComponent,
     CardFavoritesTableComponent,
+    CastSlideComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule],
   providers: [ActoresService, AuthService, FavoriteFilmsService],
