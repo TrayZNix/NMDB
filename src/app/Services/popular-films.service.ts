@@ -44,11 +44,11 @@ export class PopularFilmsService {
 
   getFilmDetails(id:string){
 
-    return this.http.get< FilmDetailResponse>(`${environment.movieDB.apiBaseUrl}/movie/${id}?api_key=${environment.movieDB.apiKey}`,{
+    return this.http.get<FilmDetailResponse>(`${environment.movieDB.apiBaseUrl}/movie/${id}?api_key=${environment.movieDB.apiKey}`,{
       params:this.params
     }).pipe(
-      catchError(err => of(null))
-    )
+      catchError(error => of(null))
+    );
   }
 
   getCast(id:string):Observable<Cast[]>{
@@ -57,7 +57,7 @@ export class PopularFilmsService {
       params:this.params
     }).pipe(
       map(res=> res.cast),
-      catchError(err => of([]))
+      catchError(error => of([]))
     );
   }
 
@@ -67,7 +67,8 @@ export class PopularFilmsService {
       params:this.params
     }).pipe(
       map(resp => resp.results),
-    )
+      catchError(error => of([]))
+    );
   }
 
   resetFilmsPage() {

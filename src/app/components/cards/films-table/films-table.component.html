@@ -186,7 +186,7 @@
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <div class="flex items-center">
-              <span class="mr-2">{{ getVotesAverage(movie) }}%</span>
+              <span class="mr-2">{{ getVotesAverage(movie) | number:"1.1-2" }}%</span>
               <div class="relative w-full">
                 <div
                   class="overflow-hidden h-2 text-xs flex rounded bg-red-200"

@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Films } from 'src/app/interfaces/popularFilm.interface';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-films-card',
@@ -8,14 +7,12 @@ import { Films } from 'src/app/interfaces/popularFilm.interface';
 })
 export class FilmsCardComponent implements OnInit {
 
-  @Input() movies?: Films[];
-
-  movie: Films[] = [];
-  filmImgUrl: string = 'https://image.tmdb.org/t/p/w500/';
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }
