@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Result } from "src/app/interfaces/favorites.interface";
+import { pelisFav } from "src/app/interfaces/favorites.interface";
 import { FavoriteFilmsService } from "src/app/Services/favorite-films.service";
 
 @Component({
@@ -16,7 +16,7 @@ export class FavoritesComponent implements OnInit {
     this._color = color !== "light" && color !== "dark" ? "light" : color;
   }
   private _color = "light";
-  peliculasFavoritas!: Result[];
+  peliculasFavoritas!: pelisFav[];
   constructor(private favoriteFilmsService: FavoriteFilmsService) {}
 
   ngOnInit(): void {

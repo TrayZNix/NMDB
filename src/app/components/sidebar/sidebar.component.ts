@@ -10,7 +10,6 @@ export class SidebarComponent implements OnInit {
 
   loguedIn: boolean;
   ngOnInit() {
-    console.log(localStorage.getItem("sessionId"));
     if (localStorage.getItem("sessionId") == null) {
       this.loguedIn = false;
     } else {

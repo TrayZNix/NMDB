@@ -1,0 +1,12 @@
+th:first-child:hover {
+  cursor: pointer;
+  background-color: rgba(235, 235, 235, 0.4);
+  transition: 0.33s;
+}
+button {
+  background-color: #73c991;
+}
+button:hover {
+  background-color: #dc2626;
+  transition: 0.33s;
+}
