@@ -1,11 +1,11 @@
 export interface ResponseFavoriteFilms {
   page: number;
-  results: Result[];
+  results: pelisFav[];
   total_pages: number;
   total_results: number;
 }
 
-export interface Result {
+export interface pelisFav {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -20,4 +20,10 @@ export interface Result {
   video: boolean;
   vote_average: number;
   vote_count: number;
+}
+
+export interface ResponseEditFavorite {
+  success: boolean;
+  status_code: number;
+  status_message: string;
 }

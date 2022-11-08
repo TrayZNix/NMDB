@@ -9,18 +9,21 @@ import { RatingsService } from "src/app/Services/ratings.service";
 })
 export class ReviewsComponent implements OnInit {
   accountId!: number;
-  ratedMovies!: RatedMovie[]
-  constructor(private ratingService: RatingsService, private authService: AuthService) {}
+  ratedMovies!: RatedMovie[];
+  constructor(
+    private ratingService: RatingsService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    let sessionId = localStorage.getItem('sessionId');
-    this.authService.getAccountDetails(sessionId).subscribe(result => {
-
-
-      this.accountId = result.id
-      this.ratingService.getRatedFilms(this.accountId, sessionId).subscribe(result => {
-        this.ratedMovies = result.results
-      })
-    })
+    let sessionId = localStorage.getItem("sessionId");
+    this.authService.getAccountDetails(sessionId).subscribe((result) => {
+      this.accountId = result.id;
+      this.ratingService
+        .getRatedFilms(this.accountId, sessionId)
+        .subscribe((result) => {
+          this.ratedMovies = result.results;
+        });
+    });
   }
 }

@@ -59,6 +59,7 @@ import { AuthService } from "./Services/auth.service";
 import { FavoriteFilmsService } from "./Services/favorite-films.service";
 import { CastSlideComponent } from "./components/cards/cast-slide/cast-slide.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { ReviewFilmsTableComponent } from "./components/cards/review-films-table/review-film-table.component";
 
 @NgModule({
   declarations: [
@@ -102,9 +103,15 @@ import { ReactiveFormsModule } from "@angular/forms";
     DetallesActorComponent,
     CardFavoritesTableComponent,
     CastSlideComponent,
-
+    ReviewFilmsTableComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule,
+    ReactiveFormsModule,
+  ],
   providers: [ActoresService, AuthService, FavoriteFilmsService],
   bootstrap: [AppComponent],
 })

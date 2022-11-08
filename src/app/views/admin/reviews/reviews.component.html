@@ -1,5 +1,9 @@
 <div class="flex flex-wrap mt-4">
   <h2>Mis peliculas valoradas</h2>
-  <app-films-table *ngIf="ratedMovies != null" [movies]="ratedMovies" ></app-films-table>
+  <app-review-film-table
+    *ngIf="ratedMovies != null"
+    [movies]="ratedMovies"
+    [accountId]="accountId"
+  ></app-review-film-table>
   <h2 *ngIf="ratedMovies == null">No se han encontrados peliculas valoradas</h2>
 </div>
