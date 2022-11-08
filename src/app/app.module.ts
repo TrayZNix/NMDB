@@ -58,6 +58,7 @@ import { ActoresService } from "./Services/actores.service";
 import { AuthService } from "./Services/auth.service";
 import { FavoriteFilmsService } from "./Services/favorite-films.service";
 import { CastSlideComponent } from "./components/cards/cast-slide/cast-slide.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -100,9 +101,10 @@ import { CastSlideComponent } from "./components/cards/cast-slide/cast-slide.com
     PeliculaDetailsComponent,
     DetallesActorComponent,
     CardFavoritesTableComponent,
-    CastSlideComponent
+    CastSlideComponent,
+
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule, ReactiveFormsModule],
   providers: [ActoresService, AuthService, FavoriteFilmsService],
   bootstrap: [AppComponent],
 })

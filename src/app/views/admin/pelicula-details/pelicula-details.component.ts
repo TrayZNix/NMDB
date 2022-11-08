@@ -6,6 +6,7 @@ import { VideoReponse, Videos } from 'src/app/interfaces/movie-video.interface';
 import { AuthService } from 'src/app/Services/auth.service';
 import { PopularFilmsService } from 'src/app/Services/popular-films.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-pelicula-details',
@@ -18,6 +19,7 @@ export class PeliculaDetailsComponent implements OnInit {
   film?: FilmDetailResponse;
   cast: Cast[]=[];
   video: Videos[];
+  formulario!: FormGroup
 
   constructor(private authService: AuthService, private sanitazer: DomSanitizer, private router:Router, private activatedRoute: ActivatedRoute, private filmsService: PopularFilmsService) { }
 
@@ -41,6 +43,11 @@ export class PeliculaDetailsComponent implements OnInit {
     this.filmsService.getVideo(id).subscribe(video => {
       this.video = video;
     });
+
+    //InicializarFormulario
+    this.formulario = new FormGroup({valoracion: new FormControl(0)})
+    //
+
   }
 
 

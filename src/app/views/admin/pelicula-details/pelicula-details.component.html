@@ -5,7 +5,7 @@
         [src]="getImgUrl(film.backdrop_path)"
         (error)="imgOnError($event)"
         alt="Poster photo"
-        style="height: 40vh; border: 3px solid #141313;border-radius: 4px;" 
+        style="height: 40vh; border: 3px solid #141313;border-radius: 4px;"
       />
     </div>
     <div>
@@ -298,8 +298,14 @@
             {{ film.vote_average }} out of 10
           </p>
           <p class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-           -  Nº of votes: {{ film.vote_count }} 
+           -  Nº of votes: {{ film.vote_count }}
           </p>
+          <div>
+            <p class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">Rate this movie: </p>
+            <form formGroup="formulario">
+              <input formControlName="valoracion" type="range" min="5" max="10" step="0.5">
+            </form>
+          </div>
         </div>
       </div>
 
@@ -324,11 +330,11 @@
       <div class="text-justify dark:text-gray-400">
         <span class="font-semibold text-lg  font-semibold dark:text-white">Status:</span> {{ film.status }}
       </div>
-      
+
       <div class="text-justify dark:text-gray-400">
         <span class="font-semibold text-lg  font-semibold dark:text-white">Tagline:</span> {{ film.tagline }}
       </div>
-      
+
       <div class="text-justify dark:text-gray-400">
         <span class="font-semibold text-lg  font-semibold dark:text-white">Prueba Video:</span> {{ film.video }}
       </div>
@@ -343,19 +349,19 @@
       <div class="text-justify dark:text-gray-400">
         <span class="font-semibold text-lg  font-semibold dark:text-white">Release date:</span> {{ film.release_date | date}}
       </div>
-    
+
       <div class="text-justify dark:text-gray-400">
         <span class="font-semibold text-lg  font-semibold dark:text-white">Overview:</span> {{film.overview}}
       </div>
     </div>
     <div class=" grid content-center">
         <div *ngIf="film.video==false" class="aspect-w-full aspect-h-auto">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
             width="500"
             height="300"
-            style="border: 3px solid #080808;border-radius: 4px;" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            style="border: 3px solid #080808;border-radius: 4px;"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
           </div>
 
@@ -364,9 +370,9 @@
             [src]="getUrlVideo(video)"
             width="500"
             height="300"
-            style="border: 3px solid #080808;border-radius: 4px;" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            style="border: 3px solid #080808;border-radius: 4px;"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
           </div>
     </div>
