@@ -1,6 +1,5 @@
 <a
   class="text-blueGray-500 block"
-  href="#pablo"
   (click)="toggleDropdown($event)"
   #btnDropdownRef
 >
@@ -9,9 +8,20 @@
       class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
     >
       <img
+        *ngIf="accDetails != null"
         alt="..."
         class="w-full rounded-full align-middle border-none shadow-lg"
-        src="assets/img/team-1-800x800.jpg"
+        [src]="
+          'https://www.themoviedb.org/t/p/w150_and_h150_face' +
+          accDetails.avatar.tmdb.avatar_path
+        "
+        onerror="this.src='assets/img/unknownUser.png'"
+      />
+      <img
+        *ngIf="accDetails == null"
+        alt="..."
+        class="w-full rounded-full align-middle border-none shadow-lg"
+        src="assets/img/unknownUser.png"
       />
     </span>
   </div>
@@ -22,29 +32,26 @@
     [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'"
   >
     <a
-      href="#pablo"
+      *ngIf="!isLoged()"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+      (click)="login()"
     >
-      Action
+      Login
     </a>
     <a
-      href="#pablo"
+      *ngIf="isLoged()"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
     >
-      Another action
-    </a>
-    <a
-      href="#pablo"
-      class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-    >
-      Something else here
+      Ver detalles de la cuenta
     </a>
     <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
     <a
-      href="#pablo"
+      *ngIf="isLoged()"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+      (click)="logout()"
     >
-      Seprated link
+      <i class="fas fa-door-open mr-2 text-sm"></i>
+      Logout
     </a>
   </div>
 </div>

@@ -1,0 +1,12 @@
+.marginCustom {
+  margin-top: 120px;
+}
+#slider {
+  margin: 2%;
+}
+
+form {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 2%;
+}

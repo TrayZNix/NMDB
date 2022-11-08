@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { pelisFav } from "src/app/interfaces/favorites.interface";
 
 @Component({
   selector: "app-card-table",
@@ -13,7 +14,7 @@ export class CardTableComponent implements OnInit {
     this._color = color !== "light" && color !== "dark" ? "light" : color;
   }
   private _color = "light";
-
+  @Input() peliculas: pelisFav[];
   constructor() {}
 
   ngOnInit(): void {}

@@ -8,7 +8,14 @@ export class SidebarComponent implements OnInit {
   collapseShow = "hidden";
   constructor() {}
 
-  ngOnInit() {}
+  loguedIn: boolean;
+  ngOnInit() {
+    if (localStorage.getItem("sessionId") == null) {
+      this.loguedIn = false;
+    } else {
+      this.loguedIn = true;
+    }
+  }
   toggleCollapseShow(classes) {
     this.collapseShow = classes;
   }

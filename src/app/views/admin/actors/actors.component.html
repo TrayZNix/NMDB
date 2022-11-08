@@ -1,0 +1,49 @@
+<div id="main">
+  <div id="container" fxLayout="row wrap" fxLayoutAlign="center center">
+    <app-tarjeta-actor
+      [listaActores]="listaActores"
+      [locatedInPage]="page"
+    ></app-tarjeta-actor>
+  </div>
+  <div id="pages">
+    <div class="buttons">
+      <button color="secondary" (click)="prevPage()" *ngIf="!(+page - 1 <= 0)">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button
+        color="secondary"
+        (click)="setPage(+page - 2)"
+        *ngIf="!(+page - 2 <= 0)"
+      >
+        {{ +page - 2 }}
+      </button>
+      <button
+        color="secondary"
+        (click)="setPage(+page - 1)"
+        *ngIf="!(+page - 1 <= 0)"
+      >
+        {{ +page - 1 }}
+      </button>
+      <button color="primary" class="active">
+        {{ page }}
+      </button>
+      <button
+        color="secondary"
+        (click)="setPage(+page + 1)"
+        *ngIf="!(+page + 1 >= +pages)"
+      >
+        {{ +page + 1 }}
+      </button>
+      <button
+        color="secondary"
+        (click)="setPage(+page + 2)"
+        *ngIf="!(+page + 2 >= +pages)"
+      >
+        {{ +page + 2 }}
+      </button>
+      <button mat-icon-button (click)="nextPage()">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
