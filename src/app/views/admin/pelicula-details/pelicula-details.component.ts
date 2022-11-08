@@ -16,9 +16,6 @@ export class PeliculaDetailsComponent implements OnInit {
 
   filmImgUrl: string = 'https://image.tmdb.org/t/p/w500/';
   film?: FilmDetailResponse;
-  
-  gen: Genre[] = [];
-
   cast: Cast[]=[];
   video: Videos[];
 
@@ -37,6 +34,9 @@ export class PeliculaDetailsComponent implements OnInit {
       this.film = movie;
     });
 
+    this.filmsService.getCast(id).subscribe(cast => {
+      this.cast = cast;
+    });
 
     this.filmsService.getVideo(id).subscribe(video => {
       this.video = video;

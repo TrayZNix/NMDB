@@ -371,5 +371,9 @@
           </div>
     </div>
 
+    <div  *ngIf="cast.length > 0" class="grid content-center">
+        <app-cast-slide [cast]="cast"></app-cast-slide>
+    </div>
+
   </div>
 </div>
