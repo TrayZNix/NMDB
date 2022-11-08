@@ -18,10 +18,7 @@
   </div>
   <div class="block w-full overflow-x-auto">
     <!-- Projects table -->
-    <table
-      class="items-center w-full bg-transparent border-collapse"
-      *ngIf="loaded"
-    >
+    <table class="items-center w-full bg-transparent border-collapse">
       <thead>
         <tr>
           <th
@@ -101,6 +98,7 @@
                 ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
                 : 'bg-red-800 text-red-300 border-red-700'
             "
+            *ngIf="loaded"
           >
             Favoritos
           </th>
@@ -194,6 +192,7 @@
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-normal p-4"
+            *ngIf="loaded"
           >
             <button
               *ngIf="!checkIfFav(movie.id)"
