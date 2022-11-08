@@ -36,12 +36,14 @@ export class FilmsTableComponent implements OnInit {
   loaded: boolean = false;
 
   ngOnInit(): void {
+    this.setPeliculasFavoritas();
+  }
+  setPeliculasFavoritas() {
     this.favoriteFilmsService.getFavoriteFilms().subscribe((result) => {
       this.misFavoritas = result.results;
       this.loaded = true;
     });
   }
-
   getVotesAverage(movie: Films) {
     return (this.percentage = Number((movie.vote_average * 10).toFixed(2)));
   }
@@ -92,7 +94,7 @@ export class FilmsTableComponent implements OnInit {
             text: "Se ha añadido a favoritos correctamente",
             icon: "success",
           }).then(() => {
-            window.location.reload();
+            this.setPeliculasFavoritas();
           });
         } else if (response.success && response.status_code == 13) {
           Swal.fire({
@@ -100,7 +102,7 @@ export class FilmsTableComponent implements OnInit {
             text: "Se ha eliminado de favoritos correctamente",
             icon: "success",
           }).then(() => {
-            window.location.reload();
+            this.setPeliculasFavoritas();
           });
         } else if (!response.success) {
           Swal.fire({
@@ -108,6 +110,7 @@ export class FilmsTableComponent implements OnInit {
             text: "Ha ocurrido un error, no se ha podido añadir a favoritos",
             icon: "error",
           });
+          this.setPeliculasFavoritas();
         }
       },
       (Error) => {
