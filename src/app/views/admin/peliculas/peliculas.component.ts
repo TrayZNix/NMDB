@@ -41,7 +41,7 @@ export class PeliculasComponent implements OnInit, OnDestroy {
         requestToken = token.request_token;
         console.log(requestToken);
         this.authService.createSession(requestToken);
-        window.location.href = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=http://localhost:4200/auth/login`; //!Cambiar ip por nombre de pagina web
+        window.location.href = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=https://nmdbii.web.app/auth/login`; //!Cambiar ip por nombre de pagina web
       } else {
         console.log("Error al pedir o recoger el token de logueo");
       }

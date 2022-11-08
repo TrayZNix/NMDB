@@ -54,7 +54,6 @@ import { FilmsTableComponent } from "./components/cards/films-table/films-table.
 import { PeliculaDetailsComponent } from "./views/admin/pelicula-details/pelicula-details.component";
 import { RouterModule } from "@angular/router";
 import { DetallesActorComponent } from "./views/admin/actors/detalles-actor/detalles-actor.component";
-import { RouterModule } from "@angular/router";
 import { CardFavoritesTableComponent } from "./components/cards/card-favorites-table/card-favorites-table.component";
 import { ActoresService } from "./Services/actores.service";
 import { AuthService } from "./Services/auth.service";
